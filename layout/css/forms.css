@@ -1,0 +1,66 @@
+/*------------------------------------------------------------------------------------------------------
+* Label & Input untereinander
+------------------------------------------------------------------------------------------------------*/
+
+/*     --wrapper
+------------------------------------------------- */
+.input-wrapper {margin-bottom: 10px;}
+
+/*     --fieldset
+------------------------------------------------- */
+fieldset {margin-bottom: 25px;}
+
+/*     --rahmen
+------------------------------------------------- */
+input, select, textarea {border: 1px solid #ccc;}
+
+/*     --felder
+------------------------------------------------- */
+input {padding: 5px; width: 200px;}
+label {float: left; width: 100%; margin-bottom: 5px;}
+select {width: 212px; height: 24px;}
+textarea {width: 350px; height: 200px;}
+legend {display: none;}
+
+/*     --submit-button
+------------------------------------------------- */
+.submit_container input {cursor: pointer;}
+
+/*     --radio-buttons
+------------------------------------------------- */
+.radio_container span {display: block; margin-bottom: 5px;}
+.radio_container label {float: none;}
+.radio_container input {width: 20px; border: none;}
+label.radio-button {float: none; display: block; margin-bottom: 10px;}
+
+/*     --checkboxes
+------------------------------------------------- */
+.checkbox_container span {display: block; margin-bottom: 5px;}
+.checkbox_container label {float: none;}
+.checkbox_container input {width: 20px; border: none;}
+label.checkbox {float: none; display: block; margin-bottom: 10px;}
+
+
+/*------------------------------------------------------------------------------------------------------
+* Label & Input Felder nebeneinander
+* formular muss die CSS-Klasse "columnar" in Contao hinzugefügt werden
+------------------------------------------------------------------------------------------------------*/
+
+/*     --labels
+------------------------------------------------- */
+.columnar label {width: 120px; }
+.columnar label.radio-button {display: inline; float: left;}
+
+/*     --radio-buttons
+------------------------------------------------- */
+.columnar .radio_container {margin-left: 120px;}
+.columnar .radio_container, .columnar .checkbox_container {margin-top: 1px;}
+
+/*     --checkboxes
+------------------------------------------------- */
+.columnar label.checkbox {display: inline; float: left;}
+.columnar .checkbox_container {margin-left: 120px;}
+
+/*     --submit-button
+------------------------------------------------- */
+.columnar .submit_container input {margin-left: 120px;}

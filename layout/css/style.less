@@ -1,0 +1,232 @@
+/* ==|== primary styles =====================================================
+   Author: novo.media   http://www.novo-media.com
+   ========================================================================== */
+
+// Fonts
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic);
+
+
+// Color
+@c_grey: #3C4547;
+@c_grey_light: #9DA2A3;
+@c_grey_ultra_light: #EBECEC;
+
+
+// Sizes
+@max_page_content_width: 1024px;
+ 
+
+// Mixins
+.fs(@sizeValue) {
+  @pxValue: @sizeValue;
+  @remValue: (@sizeValue / 16);
+  font-size: ~"@{pxValue}px"; 
+  font-size: ~"@{remValue}rem";
+}
+
+.notobold() {
+  font-weight: 700; 
+}
+
+.notoregular() {
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
+}
+
+.borderbox() {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.transition() {
+  transition: all 0.3s ease-out; 
+  -webkit-transition: all 0.3s ease-out; 
+  -moz-transition: all 0.3 ease-out; 
+  -o-transition: all 0.3 ease-out;
+}
+
+.bg_transition() {
+  transition: background 0.3s ease-out; 
+  -webkit-transition: background 0.3s ease-out; 
+  -moz-transition: background 0.3 ease-out; 
+  -o-transition: background 0.3 ease-out;
+}
+
+.dropshadow() {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.glow() {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.45);
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.45);
+}
+
+.noshadow() {
+  -webkit-box-shadow: 0;
+  -moz-box-shadow: 0;
+  -o-box-shadow: 0;
+  box-shadow: 0;
+}
+
+.noborderradius() {
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0; 
+}
+
+
+// ----------------------------------------------
+
+
+// Fonts
+
+// Default tags
+html { font-size: 100%; }
+body { .notoregular(); .fs(16); color: @c_grey; }
+b, strong { font-weight: normal; .notobold(); }
+a { color: @c_grey; text-decoration: underline; }
+a:hover { color: @c_grey_light; }
+img { max-width: 100%; height: auto; }
+
+h1, h2, h3, h4 { .notobold(); }
+h1 { .fs(36); }
+h2 { .fs(24); }
+h3 { .fs(18); }
+h4 { .fs(16); }
+
+h1, h2, h3, h4 {
+  a,
+  a:hover { text-decoration: none; }
+}
+
+
+// Some global classes
+.invisible { display: none !important; }
+.center { text-align: center; }
+
+
+// Layout
+#header_bar .inner,
+#footer .inside,
+#container { max-width: @max_page_content_width; margin: 0 auto; padding: 0 25px; }
+#container { padding: 0 10px; }
+
+
+
+// Slider
+.flexslider { 
+  line-height: auto; margin: 0 0 20px 0; border: 0; position: relative; zoom: 1;
+  .noborderradius();
+  .noshadow();
+}
+.flex-direction-nav {
+  a:before  { font-family: inherit; display: inline-block; content: none; }
+  a.flex-next:before  { content: none; }
+  a  { display: block; width: 28px; height: 128px; top: 40%; }
+}
+.flexslider .flex-next { }
+.flexslider:hover {
+  .flex-prev { left: 35px; }
+  .flex-next { right: 35px; }
+}
+
+
+// Pageimage
+.mod_pageImage { 
+  img { width: 100%; display: block; max-height: 400px; max-width: 1020px; margin: 0 auto; }
+}
+
+
+
+// Buttons
+.btn,
+p.back a,
+#main p.more a { display: inline-block; color: @c_grey_light;
+  padding: 3px 8px 3px 20px; color: #fff; text-decoration: none; .bg_transition(); } 
+.btn:hover { text-decoration: none; color: @c_grey; }  
+
+
+// Forms
+input,
+textarea { border: 0; padding: 8px; background: @c_grey_light; }
+input.submit { background: @c_grey; color: #fff; .notobold(); width: auto; padding: 8px 15px; margin-top: 10px; .bg_transition(); }
+input.submit:hover { background: @c_grey_light; }
+
+
+// News and Events
+.news_teaser {
+  h2 a { color: @c_grey; }
+  h2 a:hover { color: @c_grey_light; }
+  p { margin: 0; } 
+  .layout_short { padding: 8px 0; border-bottom: 1px solid @c_grey_ultra_light; }
+  .layout_short.last { border: 0; }
+}
+
+.news_list { 
+  p.info { margin: 0; }
+  h2 { margin-top: 0; }
+  .layout_short { padding: 0 0 20px 0; margin-bottom: 30px; }
+}
+	
+	
+// Pagination
+.pagination { 
+  clear: both; color: #999;
+  a, span { display: block; padding: 2px 8px; }
+  ul { margin: 0; padding: 0;  }
+  li { float: left; list-style: none; margin-right: 10px; font-weight: bold; }
+  a { text-decoration: none; text-decoration: none; color: @c_grey_light; }
+  a:hover,
+  .current { background: @c_grey; color: #fff; }
+}
+
+
+
+
+/* ==|== non-semantic helper classes ======================================== */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.ir br { display: none; }
+.hidden { display: none !important; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+
+/* ==|== media queries ====================================================== */
+
+@media only screen and (min-width: 480px) {
+
+
+}
+
+@media only screen and (max-width: 900px) {
+
+  
+
+}
+
+
+
+/* ==|== print styles ======================================================= */
+ 
+@media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } 
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; } 
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
