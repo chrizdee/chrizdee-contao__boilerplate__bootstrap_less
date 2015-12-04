@@ -30,3 +30,8 @@ Die Einbindung individueller CSS- und Javascript-Dateien erfolgt über die Datei
 Individueller Javascript-Code wird über die Datei /files/layout/js/app.js verwaltet. CSS wird mittels LESS geschrieben und kommt bei mir immer in die Datei /files/layout/css/style.less.
 
 Weiterhin verwendet diese Vorlage Bootstrap 3.
+
+License
+-------
+
+It is licensed under the terms of the LGPLv3.
